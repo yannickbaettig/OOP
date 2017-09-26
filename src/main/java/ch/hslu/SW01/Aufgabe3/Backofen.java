@@ -6,7 +6,6 @@ public class Backofen {
     private Direction heatDirection;
     private double time;
 
-
     private void turnOn(){
 
     }
