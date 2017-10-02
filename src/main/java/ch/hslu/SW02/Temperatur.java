@@ -3,7 +3,9 @@ package ch.hslu.SW02;
 public class Temperatur {
 
     private float celsius;
-
+    private final float kelvinOffSet = 273.15f;
+    private final float fahreinheitOffSet = 32;
+    private final float fahreinheitFaktor = 1.8f;
 
     public Temperatur(float celsius){
         this.celsius = celsius;
@@ -14,15 +16,19 @@ public class Temperatur {
     }
 
     public float celsiusToKelvin(){
-        return getCelsius() + 273.15f;
+        return getCelsius() + kelvinOffSet;
     }
 
     public float celsiusToFahreinheit(){
-        return getCelsius() * 1.8f + 32;
+        return getCelsius() * fahreinheitFaktor + fahreinheitOffSet;
+    }
+
+    public void addTemperatur(float temperatur){
+        setCelsius(celsius + temperatur);
     }
 
     public float getCelsius() {
-        return celsius;
+        return this.celsius;
     }
 
     public void setCelsius(float celsius) {
