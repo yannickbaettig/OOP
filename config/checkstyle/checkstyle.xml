@@ -17,135 +17,135 @@
    * See the License for the specific language governing permissions and
    * limitations under the License.
 -->
-<module name="Checker">
+<module type="Checker">
 
    <!-- Checks whether files end with a new line. -->
    <!-- See http://checkstyle.sf.net/config_misc.html#NewlineAtEndOfFile -->
-   <!-- module name="NewlineAtEndOfFile"/ -->
+   <!-- module type="NewlineAtEndOfFile"/ -->
 
    <!-- Checks that property files contain the same keys. -->
    <!-- See http://checkstyle.sf.net/config_misc.html#Translation -->
-   <module name="Translation" />
+   <module type="Translation" />
 
    <!-- Checks for Size Violations. -->
    <!-- See http://checkstyle.sf.net/config_sizes.html -->
-   <module name="FileLength" />
+   <module type="FileLength" />
 
    <!-- Checks for whitespace -->
    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
-   <module name="FileTabCharacter" />
+   <module type="FileTabCharacter" />
 
    <!-- Miscellaneous other checks. -->
    <!-- See http://checkstyle.sf.net/config_misc.html -->
-   <module name="RegexpSingleline">
-      <property name="format" value="\s+$" />
-      <property name="minimum" value="0" />
-      <property name="maximum" value="0" />
-      <property name="message" value="Line has trailing spaces." />
+   <module type="RegexpSingleline">
+      <property type="format" value="\s+$" />
+      <property type="minimum" value="0" />
+      <property type="maximum" value="0" />
+      <property type="message" value="Line has trailing spaces." />
    </module>
 
    <!-- Allows suppressing of checks -->
-   <module name="SuppressWarningsFilter" />
+   <module type="SuppressWarningsFilter" />
 
-   <module name="TreeWalker">
+   <module type="TreeWalker">
 
       <!-- Checks for Javadoc comments. -->
       <!-- See http://checkstyle.sf.net/config_javadoc.html -->
-      <module name="JavadocMethod" />
-      <module name="JavadocType" />
-      <module name="JavadocVariable">
-         <property name="excludeScope" value="private" />
+      <module type="JavadocMethod" />
+      <module type="JavadocType" />
+      <module type="JavadocVariable">
+         <property type="excludeScope" value="private" />
       </module>
-      <module name="JavadocStyle" />
+      <module type="JavadocStyle" />
 
       <!-- Checks for Naming Conventions. -->
       <!-- See http://checkstyle.sf.net/config_naming.html -->
-      <module name="ConstantName" />
-      <module name="LocalFinalVariableName" />
-      <module name="LocalVariableName" />
-      <module name="MemberName" />
-      <module name="MethodName" />
-      <module name="PackageName" />
-      <module name="ParameterName" />
-      <module name="StaticVariableName" />
-      <module name="TypeName" />
+      <module type="ConstantName" />
+      <module type="LocalFinalVariableName" />
+      <module type="LocalVariableName" />
+      <module type="MemberName" />
+      <module type="MethodName" />
+      <module type="PackageName" />
+      <module type="ParameterName" />
+      <module type="StaticVariableName" />
+      <module type="TypeName" />
 
       <!-- Checks for imports -->
       <!-- See http://checkstyle.sf.net/config_import.html -->
-      <module name="AvoidStarImport" />
-      <module name="IllegalImport" /> <!-- defaults to sun.* packages -->
-      <module name="RedundantImport" />
-      <module name="UnusedImports" />
+      <module type="AvoidStarImport" />
+      <module type="IllegalImport" /> <!-- defaults to sun.* packages -->
+      <module type="RedundantImport" />
+      <module type="UnusedImports" />
 
       <!-- Checks for Size Violations. -->
       <!-- See http://checkstyle.sf.net/config_sizes.html -->
-      <module name="LineLength">
-         <property name="max" value="120" />
+      <module type="LineLength">
+         <property type="max" value="120" />
       </module>
-      <module name="MethodLength" />
-      <module name="ParameterNumber" />
+      <module type="MethodLength" />
+      <module type="ParameterNumber" />
 
       <!-- Checks for whitespace -->
       <!-- See http://checkstyle.sf.net/config_whitespace.html -->
-      <module name="EmptyForIteratorPad" />
-      <module name="GenericWhitespace" />
-      <module name="MethodParamPad" />
-      <module name="NoWhitespaceAfter" />
-      <module name="NoWhitespaceBefore" />
-      <module name="OperatorWrap" />
-      <module name="ParenPad" />
-      <module name="TypecastParenPad" />
-      <module name="WhitespaceAfter" />
-      <module name="WhitespaceAround" />
+      <module type="EmptyForIteratorPad" />
+      <module type="GenericWhitespace" />
+      <module type="MethodParamPad" />
+      <module type="NoWhitespaceAfter" />
+      <module type="NoWhitespaceBefore" />
+      <module type="OperatorWrap" />
+      <module type="ParenPad" />
+      <module type="TypecastParenPad" />
+      <module type="WhitespaceAfter" />
+      <module type="WhitespaceAround" />
 
       <!-- Modifier Checks -->
       <!-- See http://checkstyle.sf.net/config_modifiers.html -->
-      <module name="ModifierOrder" />
-      <module name="RedundantModifier" />
+      <module type="ModifierOrder" />
+      <module type="RedundantModifier" />
 
       <!-- Checks for blocks. You know, those {}'s -->
       <!-- See http://checkstyle.sf.net/config_blocks.html -->
-      <module name="AvoidNestedBlocks" />
-      <module name="EmptyBlock" />
-      <!-- <module name="EmptyCatchBlock" />  Läuft mit Maven nicht... -->
-      <module name="LeftCurly" />
-      <module name="NeedBraces" />
-      <module name="RightCurly" />
+      <module type="AvoidNestedBlocks" />
+      <module type="EmptyBlock" />
+      <!-- <module type="EmptyCatchBlock" />  Läuft mit Maven nicht... -->
+      <module type="LeftCurly" />
+      <module type="NeedBraces" />
+      <module type="RightCurly" />
 
       <!-- Checks for common coding problems -->
       <!-- See http://checkstyle.sf.net/config_coding.html -->
-      <module name="AvoidInlineConditionals" />
-      <module name="EmptyStatement" />
-      <module name="EqualsHashCode" />
-      <module name="HiddenField">
-         <property name="ignoreConstructorParameter" value="true" />
-         <property name="ignoreSetter" value="true" />
+      <module type="AvoidInlineConditionals" />
+      <module type="EmptyStatement" />
+      <module type="EqualsHashCode" />
+      <module type="HiddenField">
+         <property type="ignoreConstructorParameter" value="true" />
+         <property type="ignoreSetter" value="true" />
       </module>
-      <module name="IllegalInstantiation" />
-      <module name="InnerAssignment" />
-      <module name="MissingSwitchDefault" />
-      <module name="OneStatementPerLine" />
-      <module name="SimplifyBooleanExpression" />
-      <module name="SimplifyBooleanReturn" />
+      <module type="IllegalInstantiation" />
+      <module type="InnerAssignment" />
+      <module type="MissingSwitchDefault" />
+      <module type="OneStatementPerLine" />
+      <module type="SimplifyBooleanExpression" />
+      <module type="SimplifyBooleanReturn" />
 
       <!-- Checks for class design -->
       <!-- See http://checkstyle.sf.net/config_design.html -->
-      <module name="DesignForExtension" />
-      <module name="FinalClass" />
-      <module name="HideUtilityClassConstructor" />
-      <module name="InterfaceIsType" />
-      <module name="VisibilityModifier" />
+      <module type="DesignForExtension" />
+      <module type="FinalClass" />
+      <module type="HideUtilityClassConstructor" />
+      <module type="InterfaceIsType" />
+      <module type="VisibilityModifier" />
 
       <!-- Miscellaneous other checks. -->
       <!-- See http://checkstyle.sf.net/config_misc.html -->
-      <module name="ArrayTypeStyle" />
-      <module name="FinalParameters" />
-      <module name="TodoComment" />
-      <module name="UpperEll" />
+      <module type="ArrayTypeStyle" />
+      <module type="FinalParameters" />
+      <module type="TodoComment" />
+      <module type="UpperEll" />
 
       <!-- Allow suppressing of checks with annotations -->
-      <module name="SuppressWarningsHolder" />
-      <module name="AnnotationLocation" />
-      <module name="AnnotationUseStyle" />
+      <module type="SuppressWarningsHolder" />
+      <module type="AnnotationLocation" />
+      <module type="AnnotationUseStyle" />
    </module>
 </module>

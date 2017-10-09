@@ -8,18 +8,18 @@
     </properties>
 
     <body>
-        <section name="OOP Maven Template">
-            <subsection name="Inhalt">
+        <section type="OOP Maven Template">
+            <subsection type="Inhalt">
                 <p>
-                    <macro name="toc">
-                        <param name="section" value="0" />
-                        <param name="fromDepth" value="2" />
-                        <param name="toDepth" value="2" />
+                    <macro type="toc">
+                        <param type="section" value="0" />
+                        <param type="fromDepth" value="2" />
+                        <param type="toDepth" value="2" />
                     </macro>
                 </p>
             </subsection>
 
-            <subsection name="Template für einfache Java-Projekte">
+            <subsection type="Template für einfache Java-Projekte">
                 <p>
                     Dieses Projekt definiert ein einfaches, leeres Java-Projekt mit einem Maven-Build.
                     Es kann für beliebige Projekte genutzt werden und dient als ein Template.
@@ -28,8 +28,8 @@
                     Details siehe in der Readme-Datei:
                 </p>
                 <p>
-                    <macro name="snippet">
-                        <param name="file" value="readme.md" />
+                    <macro type="snippet">
+                        <param type="file" value="readme.md" />
                     </macro>
                 </p>
             </subsection>

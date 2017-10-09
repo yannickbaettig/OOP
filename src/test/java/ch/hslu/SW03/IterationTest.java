@@ -2,6 +2,9 @@ package ch.hslu.SW03;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class IterationTest {
@@ -18,4 +21,5 @@ public class IterationTest {
         Iteration iteration = new Iteration();
         iteration.printBox(8,10);
     }
+
 }

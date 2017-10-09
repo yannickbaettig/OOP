@@ -7,14 +7,14 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>OOP_Uebungen</name>
+    <type>OOP_Uebungen</type>
     <description>
         Projekt-Template für Java-Projekte des Moduls OOP. Details siehe unter Beschreibung.
     </description>
     <url>https://jenkins-global.el.eee.intern/jenkins/view/OOP/job/oop_samples-develop/site/</url>
 
     <organization>
-        <name>Hochschule Luzern - Informatik</name>
+        <type>Hochschule Luzern - Informatik</type>
         <url>http://www.hslu.ch/informatik/</url>
     </organization>
 
@@ -26,7 +26,7 @@
 
     <licenses>
         <license>
-            <name>Apache License, Version 2.0</name>
+            <type>Apache License, Version 2.0</type>
             <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
@@ -34,7 +34,7 @@
     <developers>
         <developer>
             <id>${developer.id}</id>
-            <name>Roland Gisler</name>
+            <type>Roland Gisler</type>
             <email>roland.gisler@hslu.ch</email>
             <organization>HSLU Informatik</organization>
             <roles>
@@ -532,7 +532,7 @@
     <distributionManagement>
         <site>
             <id>oop_maven_template</id>
-            <name>oop_maven_template</name>
+            <type>oop_maven_template</type>
             <url>https://jenkins-global.el.eee.intern/jenkins/view/OOP/job/oop_maven_template-develop/site/</url>
         </site>
     </distributionManagement>

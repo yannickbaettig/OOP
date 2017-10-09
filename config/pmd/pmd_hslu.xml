@@ -16,7 +16,7 @@
    * limitations under the License.
    */
 -->
-<ruleset name="Clone Implementation" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<ruleset type="Clone Implementation" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd"
    xsi:noNamespaceSchemaLocation="http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
    <description>PMD Ruleset fuer HSLU</description>
@@ -25,11 +25,11 @@
    <rule ref="rulesets/java/clone.xml" />
    <rule ref="rulesets/java/codesize.xml" />
    <rule ref="rulesets/java/coupling.xml">
-      <exclude name="LawOfDemeter" />
-      <exclude name="LoosePackageCoupling" />
+      <exclude type="LawOfDemeter" />
+      <exclude type="LoosePackageCoupling" />
    </rule>
    <rule ref="rulesets/java/design.xml">
-      <exclude name="UseVarargs" />
+      <exclude type="UseVarargs" />
    </rule>
    <rule ref="rulesets/java/finalizers.xml" />
    <rule ref="rulesets/java/imports.xml" />
@@ -41,7 +41,7 @@
 
    <rule ref="rulesets/java/naming.xml/LongVariable">
       <properties>
-         <property name="minimum" value="30" />
+         <property type="minimum" value="30" />
       </properties>
    </rule>
 
