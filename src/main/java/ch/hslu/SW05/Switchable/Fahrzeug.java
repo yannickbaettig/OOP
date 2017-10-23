@@ -6,7 +6,7 @@ import java.util.List;
 public class Fahrzeug implements CountingSwitchable, Named {
     private Motor motor = new Motor();
     private Licht licht = new Licht();
-    private long switchCount;
+    private long switchCount = 0;
     private String name;
 
     private List<Switchable> components = new ArrayList<Switchable>(){
