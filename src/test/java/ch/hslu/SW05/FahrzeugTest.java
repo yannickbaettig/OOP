@@ -1,6 +1,8 @@
 package ch.hslu.SW05;
 
 import ch.hslu.SW05.Switchable.Fahrzeug;
+import ch.hslu.SW05.Switchable.Named;
+import ch.hslu.SW05.Switchable.Switchable;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
