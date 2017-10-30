@@ -58,7 +58,6 @@ public class CalculableTest {
     public void testAddOverflow() throws Exception {
         Calculable calculator = new Calculator();
 
-        int expected = Integer.MIN_VALUE;
         int firstNumber = Integer.MAX_VALUE;
         int secondNumber = 1;
 
@@ -69,7 +68,6 @@ public class CalculableTest {
     public void testAddUnderflow() throws Exception {
         Calculable calculator = new Calculator();
 
-        int expected = Integer.MAX_VALUE;
         int firstNumber = Integer.MIN_VALUE;
         int secondNumber = -1;
 
