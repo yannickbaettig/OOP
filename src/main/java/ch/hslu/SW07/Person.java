@@ -56,13 +56,6 @@ public class Person implements Comparable<Person>{
 
     @Override
     public int compareTo(Person other) {
-        int compare = Long.compare(this.id, other.id);
-        if (compare == 0) {
-            compare = vorname.compareTo(other.vorname);
-        }
-        if (compare == 0) {
-            compare = nachname.compareTo(other.nachname);
-        }
-        return compare;
+        return Long.compare(this.id, other.id);
     }
 }

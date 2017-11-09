@@ -10,4 +10,6 @@ public class Quecksilber extends Element {
     public String toString() {
         return super.toString() + ", Achtung Giftig";
     }
+
+
 }

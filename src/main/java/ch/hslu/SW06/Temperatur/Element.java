@@ -1,5 +1,7 @@
 package ch.hslu.SW06.Temperatur;
 
+import java.util.Objects;
+
 public class Element {
     private String id;
     private float boilingPoint;
@@ -29,4 +31,5 @@ public class Element {
                 ", fluidPoint = " + fluidPoint +
                 '}';
     }
+
 }

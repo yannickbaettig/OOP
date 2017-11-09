@@ -77,6 +77,8 @@ public class Point {
         return Objects.hash(this.x, this.y);
     }
 
+
+
     public int getX() {
         return x;
     }
