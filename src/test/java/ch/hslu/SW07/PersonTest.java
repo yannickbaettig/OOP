@@ -1,14 +1,10 @@
 package ch.hslu.SW07;
 
-import ch.hslu.SW07.Temperatur.PersonNameComparator;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import nl.jqno.equalsverifier.Warning;
 import org.junit.*;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.Assert.*;
 

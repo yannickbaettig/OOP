@@ -1,4 +1,4 @@
-package ch.hslu.SW07.Temperatur;
+package ch.hslu.SW07;
 
 import ch.hslu.SW07.Person;
 
