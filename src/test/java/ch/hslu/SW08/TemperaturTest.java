@@ -31,8 +31,17 @@ public class TemperaturTest {
         Temperatur temperatur1 = new Temperatur(30);
 
         int expected = -1; // kleiner
+        int actual = temperatur.compareTo(temperatur1);
 
-        assertEquals(expected, temperatur.compareTo(temperatur1));
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testStatic() throws Exception {
+        float actual = Temperatur.kelvinToCelsius(273.15f);
+        float expected = 0;
+
+        assertEquals(expected, actual, 0.1f);
     }
 
 }

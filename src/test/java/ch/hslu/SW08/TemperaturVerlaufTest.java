@@ -19,7 +19,7 @@ public class TemperaturVerlaufTest {
         temperaturVerlauf.add(new Temperatur(20));
         temperaturVerlauf.add(new Temperatur(30));
 
-        assertEquals(expected,temperaturVerlauf.getCount());
+        assertEquals(expected,temperaturVerlauf.size());
     }
 
     @Test
@@ -31,7 +31,7 @@ public class TemperaturVerlaufTest {
         temperaturVerlauf.add(new Temperatur(30));
         temperaturVerlauf.clear();
 
-        assertEquals(expected, temperaturVerlauf.getCount());
+        assertEquals(expected, temperaturVerlauf.size());
     }
 
     @Test
