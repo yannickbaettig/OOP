@@ -5,7 +5,7 @@ import java.util.Objects;
 public final class Temperatur implements Comparable<Temperatur> {
 
     private static final float MIN_CELSIUS = -273.15f;
-    private static final int MIN_KELVIN = 0;
+    private static final float MIN_KELVIN = 0f;
     private final static float KELVIN_OFFSET = 273.15f;
     private final static float FAHREINHEIT_OFF_SET = 32;
     private final static float FAHREINHEIT_FAKTOR = 1.8f;
@@ -62,7 +62,7 @@ public final class Temperatur implements Comparable<Temperatur> {
 */
 
     public float getKelvin() {
-        return celsius + KELVIN_OFFSET;
+        return celsiusToKelvin(this.celsius);
     }
 
     public float getCelsius() {

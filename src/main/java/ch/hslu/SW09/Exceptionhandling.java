@@ -17,7 +17,7 @@ public class Exceptionhandling {
             input = scanner.next();
             try {
                 Temperatur temperatur = Temperatur.createFromCelsius(Float.valueOf(input));
-                System.out.println(temperatur.getCelsius());
+                LOG.info(temperatur.getCelsius());
             } catch (IllegalArgumentException e) {
                 LOG.error("keine gültige Temperatur ", e);
             }

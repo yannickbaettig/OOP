@@ -13,8 +13,6 @@ import static org.mutabilitydetector.unittesting.MutabilityAssert.assertImmutabl
 
 public class TemperaturTest {
 
-
-
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
@@ -25,8 +23,8 @@ public class TemperaturTest {
 
     @Test
     public void testHashcode() throws Exception {
-        Temperatur temperatur = Temperatur.createFromCelsius(20);
-        Temperatur temperatur1 = Temperatur.createFromCelsius(20);
+        Temperatur temperatur = Temperatur.createFromKelvin(20);
+        Temperatur temperatur1 = Temperatur.createFromKelvin(20);
 
         int expected = temperatur.hashCode();
         int actual = temperatur1.hashCode();
