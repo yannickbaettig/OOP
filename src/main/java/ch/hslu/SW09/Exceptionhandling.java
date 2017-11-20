@@ -1,6 +1,6 @@
 package ch.hslu.SW09;
 
-import ch.hslu.SW08.Temperatur.Temperatur;
+import ch.hslu.SW09.Temperatur.Temperatur;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,9 +16,9 @@ public class Exceptionhandling {
             LOG.info("Bitte Temperatur (°C) eingeben ('exit' zum Beenden): ");
             input = scanner.next();
             try {
-                Temperatur temperatur = new Temperatur(Float.valueOf(input));
+                Temperatur temperatur = Temperatur.createFromCelsius(Float.valueOf(input));
                 System.out.println(temperatur.getCelsius());
-            } catch (NumberFormatException e) {
+            } catch (IllegalArgumentException e) {
                 LOG.error("keine gültige Temperatur ", e);
             }
         } while (!input.equals("exit"));
