@@ -1,6 +1,6 @@
-package ch.hslu.SW09.Temperatur.Balance;
+package ch.hslu.SW09.Temperatur.CyberDojo;
 
-import ch.hslu.SW09.Balance.Balance;
+import ch.hslu.SW09.CyberDojo.Balance;
 import org.junit.*;
 import static org.junit.Assert.*;
 

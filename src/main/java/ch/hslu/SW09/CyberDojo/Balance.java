@@ -1,4 +1,4 @@
-package ch.hslu.SW09.Balance;
+package ch.hslu.SW09.CyberDojo;
 
 import java.util.Stack;
 
