@@ -7,13 +7,17 @@ import java.util.Scanner;
 
 public class TemperaturEingabe implements TemperaturEventListener{
     private static final Logger LOG = LogManager.getLogger(TemperaturEingabe.class);
+    TemperaturVerlauf temperaturVerlauf;
 
-    public static void main(String[] args) {
-        TemperaturVerlauf temperaturVerlauf = new TemperaturVerlauf();
-        temperaturVerlauf.addTemperaturEventListener(new TemperaturEingabe());
+    public TemperaturEingabe(){
+        temperaturVerlauf = new TemperaturVerlauf();
+        temperaturVerlauf.addTemperaturEventListener(this);
+    }
+
+    public void consoleInput(){
         String input;
         Scanner scanner = new Scanner(System.in);
-        do {
+            do {
             LOG.info("Bitte Temperatur (°C) eingeben ('exit' zum Beenden): ");
             input = scanner.next();
             if (!input.equals("exit")){
@@ -26,8 +30,8 @@ public class TemperaturEingabe implements TemperaturEventListener{
                 }
             }
         } while (!input.equals("exit"));
-        LOG.info("Programm beendet.");
-        LOG.info(temperaturVerlauf.toString());
+            LOG.info("Programm beendet.");
+            LOG.info(temperaturVerlauf.toString());
     }
 
     @Override

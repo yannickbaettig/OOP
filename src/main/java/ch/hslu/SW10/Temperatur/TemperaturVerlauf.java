@@ -1,11 +1,15 @@
 package ch.hslu.SW10.Temperatur;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 public class TemperaturVerlauf extends ArrayList<Temperatur>{
+    private final static Logger LOG = LogManager.getLogger(TemperaturVerlauf.class);
     private List<TemperaturEventListener> changeListeners = new ArrayList<>();
 
     public float getMaxTemperatur(){
@@ -13,7 +17,7 @@ public class TemperaturVerlauf extends ArrayList<Temperatur>{
         try {
             max = this.stream().max(Comparator.naturalOrder()).get().getCelsius();
         } catch (NoSuchElementException e) {
-           System.out.println("Keine Temperatur vorhanden " + e);
+            LOG.error("Keine Temperatur vorhanden ", e);
         }
         return max;
     }
@@ -23,7 +27,7 @@ public class TemperaturVerlauf extends ArrayList<Temperatur>{
         try {
             min = this.stream().min(Comparator.naturalOrder()).get().getCelsius();
         } catch (NoSuchElementException e) {
-            System.out.println("Keine Temperatur vorhanden " + e);
+            LOG.error("Keine Temperatur vorhanden ", e);
         }
         return min;
     }
@@ -33,7 +37,7 @@ public class TemperaturVerlauf extends ArrayList<Temperatur>{
         try {
             sum = (float) this.stream().mapToDouble(Temperatur::getCelsius).average().getAsDouble();
         } catch (NoSuchElementException e) {
-            System.out.println("Keine Temperatur vorhanden " + e);
+            LOG.error("Keine Temperatur vorhanden ", e);
         }
         return sum;
     }
@@ -54,7 +58,7 @@ public class TemperaturVerlauf extends ArrayList<Temperatur>{
 
     @Override
     public String toString() {
-        return "Anzahl Temperaturen: " + size() + ", Durchscnittstemperatur: " + getAverageTemperatur() +", Max Temperatur: " + getMaxTemperatur() + ", Min Temperatur: " + getMinTemperatur();
+        return "Anzahl Temperaturen: " + size() + ", Durchschnittstemperatur: " + getAverageTemperatur() +", Max Temperatur: " + getMaxTemperatur() + ", Min Temperatur: " + getMinTemperatur();
     }
 
     public void addTemperaturEventListener(TemperaturEventListener listener) {

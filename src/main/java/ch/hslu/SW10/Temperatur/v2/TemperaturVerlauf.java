@@ -1,20 +1,23 @@
 package ch.hslu.SW10.Temperatur.v2;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 public class TemperaturVerlauf extends ArrayList<Temperatur>{
-    private List<TemperaturMinEventListener> minChangeListeners = new ArrayList<>();
-    private List<TemperaturMaxEventListener> maxChangeListeners = new ArrayList<>();
+    private final static Logger LOG = LogManager.getLogger(TemperaturVerlauf.class);
+    private List<TemperaturEventListener> changeListeners = new ArrayList<>();
 
     public float getMaxTemperatur(){
         float max = 0;
         try {
             max = this.stream().max(Comparator.naturalOrder()).get().getCelsius();
         } catch (NoSuchElementException e) {
-           System.out.println("Keine Temperatur vorhanden " + e);
+           LOG.error("Keine Temperatur vorhanden ", e);
         }
         return max;
     }
@@ -24,7 +27,7 @@ public class TemperaturVerlauf extends ArrayList<Temperatur>{
         try {
             min = this.stream().min(Comparator.naturalOrder()).get().getCelsius();
         } catch (NoSuchElementException e) {
-            System.out.println("Keine Temperatur vorhanden " + e);
+            LOG.error("Keine Temperatur vorhanden ", e);
         }
         return min;
     }
@@ -34,7 +37,7 @@ public class TemperaturVerlauf extends ArrayList<Temperatur>{
         try {
             sum = (float) this.stream().mapToDouble(Temperatur::getCelsius).average().getAsDouble();
         } catch (NoSuchElementException e) {
-            System.out.println("Keine Temperatur vorhanden " + e);
+            LOG.error("Keine Temperatur vorhanden ", e);
         }
         return sum;
     }
@@ -43,11 +46,11 @@ public class TemperaturVerlauf extends ArrayList<Temperatur>{
         if (!this.isEmpty()) {
             if (temperatur.getCelsius() > this.getMaxTemperatur()) {
                 TemperaturMaxEvent event = new TemperaturMaxEvent(this, temperatur);
-                fireTemperaturMaxEvent(event);
+                fireTemperaturEvent(event);
             }
             if (temperatur.getCelsius() < this.getMinTemperatur()) {
                 TemperaturMinEvent event = new TemperaturMinEvent(this, temperatur);
-                fireTemperaturMinEvent(event);
+                fireTemperaturEvent(event);
             }
         }
         this.add(temperatur);
@@ -55,42 +58,24 @@ public class TemperaturVerlauf extends ArrayList<Temperatur>{
 
     @Override
     public String toString() {
-        return "Anzahl Temperaturen: " + size() + ", Durchscnittstemperatur: " + getAverageTemperatur() +", Max Temperatur: " + getMaxTemperatur() + ", Min Temperatur: " + getMinTemperatur();
+        return "Anzahl Temperaturen: " + size() + ", Durchschnittstemperatur: " + getAverageTemperatur() +", Max Temperatur: " + getMaxTemperatur() + ", Min Temperatur: " + getMinTemperatur();
     }
 
-    public void addTemperaturMaxEventListener(TemperaturMaxEventListener listener) {
+    public void addTemperaturEventListener(TemperaturEventListener listener) {
         if (listener != null) {
-            maxChangeListeners.add(listener);
+            changeListeners.add(listener);
         }
     }
 
-    public void removeTemperaturMaxEventListener(TemperaturMaxEventListener listener) {
+    public void removeTemperaturEventListener(TemperaturEventListener listener) {
         if (listener != null) {
-            minChangeListeners.remove(listener);
+            changeListeners.remove(listener);
         }
     }
 
-    public void fireTemperaturMaxEvent(TemperaturMaxEvent event) {
-        for (TemperaturMaxEventListener listener : maxChangeListeners) {
-            listener.temperaturMaxChange(event);
-        }
-    }
-
-    public void addTemperaturMinEventListener(TemperaturMinEventListener listener) {
-        if (listener != null) {
-            minChangeListeners.add(listener);
-        }
-    }
-
-    public void removeTemperaturMinEventListener(TemperaturMinEventListener listener) {
-        if (listener != null) {
-            minChangeListeners.remove(listener);
-        }
-    }
-
-    public void fireTemperaturMinEvent(TemperaturMinEvent event) {
-        for (TemperaturMinEventListener listener : minChangeListeners) {
-            listener.temperaturMinChange(event);
+    public void fireTemperaturEvent(TemperaturEvent event) {
+        for (TemperaturEventListener listener : changeListeners) {
+            listener.temperaturChange(event);
         }
     }
 

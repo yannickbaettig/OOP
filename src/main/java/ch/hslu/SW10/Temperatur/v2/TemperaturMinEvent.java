@@ -2,8 +2,7 @@ package ch.hslu.SW10.Temperatur.v2;
 
 import java.util.EventObject;
 
-public class TemperaturMinEvent extends EventObject {
-    private Temperatur temperatur;
+public class TemperaturMinEvent extends TemperaturEvent {
 
     /**
      * Constructs a prototypical Event.
@@ -12,11 +11,7 @@ public class TemperaturMinEvent extends EventObject {
      * @throws IllegalArgumentException if source is null.
      */
     public TemperaturMinEvent(Object source, Temperatur temperatur) {
-        super(source);
-        this.temperatur = temperatur;
+        super(source, temperatur);
     }
 
-    public Temperatur getTemperatur() {
-        return temperatur;
-    }
 }
