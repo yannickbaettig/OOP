@@ -5,6 +5,7 @@ import nl.jqno.equalsverifier.Warning;
 import org.junit.*;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 import static org.junit.Assert.*;
 
@@ -100,6 +101,36 @@ public class PersonTest {
         personsExpected[3] = person4;
 
         Arrays.sort(persons, new PersonNameComparator());
+
+        for(Person temp: persons){
+            System.out.println(temp);
+        }
+
+        assertArrayEquals(persons,personsExpected);
+    }
+
+    @Test
+    public void testComparatorwithLambdas() throws Exception {
+        Person [] persons = new Person[4];
+        Person person1 = new Person(12, "ahans", "aruedi");
+        Person person2 = new Person(1, "bhans", "aruedi");
+        Person person3 = new Person(4, "bhans", "bruedi");
+        Person person4 = new Person(8, "chans", "bruedi");
+        persons[0] = person2;
+        persons[1] = person3;
+        persons[2] = person4;
+        persons[3] = person1;
+
+        Comparator<Person> nameComparator = (p1,p2) -> p1.getNachname().compareTo(p2.getNachname());
+        Comparator<Person> vorNameComparator = (p1,p2) -> p1.getVorname().compareTo(p2.getVorname());
+
+        Person[] personsExpected = new Person[4];
+        personsExpected[0] = person1;
+        personsExpected[1] = person2;
+        personsExpected[2] = person3;
+        personsExpected[3] = person4;
+
+        Arrays.sort(persons, nameComparator.thenComparing(vorNameComparator));
 
         for(Person temp: persons){
             System.out.println(temp);

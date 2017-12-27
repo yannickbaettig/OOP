@@ -22,24 +22,9 @@ public class WorkerDemo {
 
 
 
-        final Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                worker1.processWork();
-            }
-        });
-        final Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                worker2.processWork();
-            }
-        });
-        final Thread thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                worker3.processWork();
-            }
-        });
+        final Thread thread = new Thread(worker1::processWork);
+        final Thread thread2 = new Thread(worker2::processWork);
+        final Thread thread3 = new Thread(worker3::processWork);
 
         thread.start();
         thread2.start();
