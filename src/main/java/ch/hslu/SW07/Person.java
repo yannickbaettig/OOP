@@ -45,7 +45,7 @@ public class Person implements Comparable<Person>{
 
         final Person person = (Person) o;
 
-        return (id == person.id && Objects.equals(this.nachname, person.nachname) && Objects.equals(this.vorname,person.vorname) );
+        return (Objects.equals(this.id, person.id) && Objects.equals(this.nachname, person.nachname) && Objects.equals(this.vorname,person.vorname) );
     }
 
     @Override

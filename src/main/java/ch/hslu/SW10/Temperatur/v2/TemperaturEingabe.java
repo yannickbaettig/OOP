@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class TemperaturEingabe {
     private static final Logger LOG = LogManager.getLogger(TemperaturEingabe.class);
-    TemperaturVerlauf temperaturVerlauf;
+    private TemperaturVerlauf temperaturVerlauf;
 
     public TemperaturEingabe(){
         temperaturVerlauf = new TemperaturVerlauf();

@@ -52,7 +52,7 @@ public class TemperaturTest {
     }
 
     @Test
-    public void testIllegalArgumentException() throws Exception {
+    public void testIllegalArgumentException() {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("ungültige Temperatur");
         Temperatur.createFromKelvin(-1);
